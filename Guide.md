@@ -4,24 +4,25 @@ If you want to run Linux as a virtual machine to run your code but it ends up ea
 
 ## Pre-Requisites:
 
-1)	Enable Virtualization in BIOS
-If you performed Lab 1 and was able to install VMWare without any problem then you already have virtualization enabled. If not, go to your BIOS settings and enable it. Each bios is different but its usually under ‘Device Security’ or something along the lines.
-Note for all my fellow Valorant players, if do not have TPM 2.0, then Vanguard won’t let you play with virtualization enabled. This applies to LoL as well I believe. 
+#### Enable Virtualization in BIOS
+- Go to your BIOS settings and enable it. Each bios is different but its usually under ‘Device Security’ or something along the lines (search for your specific model)
+NOTE: Vanguard and consequently Valorant will not work if your system does not have TPM 2.0 if you enable virtualization. 
 
 ## Steps:
 
 ### 1)	Install WSL
-If you are on Windows 11, chances are you already have WSL installed on your system. 
-If you are on Windows 10, download WSL from Microsoft Store.
+- If you are on Windows 11, chances are you already have WSL installed on your system. 
+- If you are on Windows 10, download WSL from Microsoft Store.
 
 ### 2)	Update WSL
-Note: If you are in the WSL terminal window (the penguin logo), then write ‘wsl.exe’ with each command. Command prompt, PowerShell works with both. 
-Any command with <> written, replace it with your respective selection. Do NOT include the <>
+- Note: If you are in the WSL terminal window (the penguin logo), then write ‘wsl.exe’ with each command. Command prompt, PowerShell works with both. 
+- Any command with <> written, replace it with your respective selection. Do NOT include the <>
+
 ```
 wsl.exe –update
 ```
 
-### 3)	Install Linux Distro
+### 3)	Install a Linux Distro
 ```
 wsl –install
 ```
@@ -44,31 +45,36 @@ sudo apt install gcc // install compiler
 ```
 
 ### 6)	Accessing Files
-Navigate between files and directories using bash commands we studied in Lab 1. 
-By default, the working directory is the home directory of the user on a virtual drive. To access the files on Windows drive, you don’t have to manually mount the drives since its already done. Access them with the following command:
+- Navigate between files and directories using bash commands we studied in Lab 1. 
+- By default, the working directory is the home directory of the user on a virtual drive. 
+- To access the files on Windows drive, you don’t have to manually mount the drives since its already done. Access them with the following command:
 ```
 cd /mnt/<drive_letter>
 ```
 
 ### 7)	Running the code
-Now that you are in your directory where your code exists, type the following to compile the code:`
+- Now that you are in your directory where your code exists, type the following to compile the code:`
 ```
 gcc <file_name>.c -o <output_name>.exe -pthread
 ```
-An executable file should appear in your directory. If error occurs during compilation, then they will be displayed there. 
-After compiling, to run the code, run the exe file:
+- An executable file should appear in your directory. Any errors that may occur during the compilation will be displayed. 
+- After compiling, to run the code, run the exe file:
 ```
 ./<output_name>.exe 
 ```
 and viola, the code executes. 
 
 ### 8)	Running with VSCode
-To run the code directory from VSCode terminal and not have red errors everywhere in your code, do the following. It will also give autocomplete and IntelliSense which cannot work well when there are errors in your file.
-i.	Install ‘WSL’ Extension by Microsoft in VSCode 
-ii.	In your code directory, type the following:
+- To run the code directory from VSCode terminal and not have red errors everywhere in your code, do the following.
+- It will also give autocomplete and IntelliSense which cannot work well when there are errors in your file when relying on the wrapper.
+
+  i.	Install ‘WSL’ Extension by Microsoft in VSCode 
+  ii.	In your code directory, type the following:
 ```
 code .
 ```
 
-It will install the vscode server when executing the command for the first time. VSCode should open now running Ubuntu and WSL. Now its like running VSCode on a Linux machine. The terminal is bash by default. Use it to run the code using the command from step 7. 
+- It will install the vscode server when executing the command for the first time.
+- VSCode should open now running Ubuntu and WSL.
+- Now its like running VSCode on a Linux machine. The terminal is bash by default. Use it to run the code using the command from step 7. 
 

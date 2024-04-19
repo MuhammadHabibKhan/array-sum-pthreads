@@ -10,13 +10,14 @@ NOTE: Vanguard and consequently Valorant will not work if your system does not h
 
 ## Steps:
 
+#### Any command with <> written, replace it with your respective selection. Do NOT include the <>
+
 ### 1)	Install WSL
 - If you are on Windows 11, chances are you already have WSL installed on your system. 
 - If you are on Windows 10, download WSL from Microsoft Store.
 
 ### 2)	Update WSL
 - Note: If you are in the WSL terminal window (the penguin logo), then write ‘wsl.exe’ with each command. Command prompt, PowerShell works with both. 
-- Any command with <> written, replace it with your respective selection. Do NOT include the <>
 
 ```
 wsl.exe –update
@@ -24,9 +25,9 @@ wsl.exe –update
 
 ### 3)	Install a Linux Distro
 ```
-wsl –install
+wsl -–install
 ```
-Two dashes before install. Installs the default distro (Ubuntu). You can install a range of other distros as well. Type in its name after install <space> <distro_name>
+- Installs the default distro (Ubuntu). You can install a range of other distros as well. Type in its name after install <space> <distro_name>
 
 ### 4)	Run the distro
 ```

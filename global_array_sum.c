@@ -36,17 +36,13 @@ void assignWorkload(int threads)
     int *threadEWL = malloc(threads * sizeof(int));
     pthread_t *threadArray = malloc(threads * sizeof(pthread_t));
 
-    // int *threadWorkLoads = (int *)malloc(sizeof(int) * threads);
-
     if ( dataLength % threads != 0)
     {
         extraWorkLoad = dataLength % threads;
         printf("EWL: %d \n", extraWorkLoad);
     }
 
-    // logic for method 2: Divide the extra workload between threads
-    // comment this logic as well as the lines below if switching to method 1
-
+    // Divide the extra workload between threads
     int index = 0;
 
     while (extraWorkLoad != 0)
@@ -67,10 +63,6 @@ void assignWorkload(int threads)
         int *args = malloc(2 * sizeof(int));
         args[0] = i * workLoad;
 
-        // method 1: assign all EWL to last thread
-        // args[1] = workLoad + (i == threads - 1 ? extraWorkLoad : 0);
-
-        // method 2: 
         args[1] = workLoad + threadEWL[i];
 
         pthread_t thread;

@@ -37,11 +37,21 @@ You can also install ‘Windows Terminal’ app from Microsoft Store and it can 
 Setup your user and password
 
 ### 5)	Updating and Installing packages
+- Download the updated packages
 ```
-sudo apt update // download the updated packages
-sudo apt upgrade // install them
-sudo apt autoremove //remove old dependencies
-sudo apt install gcc // install compiler
+sudo apt update
+```
+- Install the packages
+```
+sudo apt upgrade
+```
+- Remove old dependencies
+```
+sudo apt autoremove
+```
+- Install the compiler
+```
+sudo apt install gcc
 ```
 
 ### 6)	Accessing Files
